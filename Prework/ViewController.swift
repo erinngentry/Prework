@@ -25,16 +25,9 @@ class ViewController: UIViewController {
         self.title = "Tip Calculator"
         
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.destination is SettingsViewController {
-//            let customTips = segue.destination as? SettingsViewController
-//
-//        }
-//    }
 
     @IBAction func calculateTip(_ sender: Any) {
+        print(#function)
     // Get bill amount from text field
         let bill = Double(billAmountTextField.text!) ?? 0
         // Get total tip
