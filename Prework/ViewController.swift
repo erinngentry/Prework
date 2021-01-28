@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var customTipLabel: UILabel!
+    @IBOutlet weak var tipSlider: UISlider!
     
+    var customTip = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,36 +26,53 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(!animated)
         
-      
-        
-        
-    }
-   
-    @IBAction func updateTitles(_ sender: Any) {
         
     }
     
+    
+
+    
     @IBAction func calculateTip(_ sender: Any) {
-        let defaults = UserDefaults.standard
-              
-        let tips = defaults.string(forKey: "customTips")
+        
         
         let bill = Double(billAmountTextField.text!) ?? 0
-        if(tips == nil){
         let tipPercentage = [0.15, 0.18, 0.20]
         let tip = bill * tipPercentage[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
         tipAmountLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
-        } else{
-//            let tips = tips.map { (value) -> Double in return Double(value)!}
-//            print(tips!)
             
-        }
+        
     }
+    
+    @IBAction func customTipSlider(_ sender: UISlider) {
+        let value = Double(sender.value)
+        customTipLabel.text = "\(value)%"
+        
+        customTip = Double(sender.value)
+        
+    }
+    
+    func updateTip(_ sender: Any) -> (Double, Double) {
+        let bill = Double(billAmountTextField.text!) ?? 0
+        
+        let tip = bill * (customTip / 100.0)
+        print(tip)
+        
+        return (tip, bill)
+    }
+
+    @IBAction func applyCustomTip(_ sender: UIButton) {
+        let tip = updateTip((Any).self).0
+        let total = updateTip((Any).self).1 + tip
+        
+        tipAmountLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
+    }
+    
     
 }
 
