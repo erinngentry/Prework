@@ -28,9 +28,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![GIF](<img src="//im2.ezgif.com/tmp/ezgif-2-89a3c83ba2ea.gif" style="width:296px;height:587px!important" alt="[video-to-gif output image]">)
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with Quicktime Player.
 
 ## Notes
 
