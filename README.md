@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![GIF](<img src="//im2.ezgif.com/tmp/ezgif-2-89a3c83ba2ea.gif" style="width:296px;height:587px!important" alt="[video-to-gif output image]">)
+![GIF](https://github.com/erinngentry/Prework/blob/main/tipcalculator.gif)
 
 GIF created with Quicktime Player.
 
